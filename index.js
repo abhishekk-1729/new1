@@ -5,12 +5,11 @@ const productRoute = require("./router/product-router")
 const checkOut = require("./router/checkout-router.js")
 const app = express();
 const connectDb = require("./utils/db");
-const PORT =  process.env.PORT || 8000;
+const PORT =  process.env.PORT;
 
 app.use(cors());
 app.use(express.json())
 
-app.use("/",async(req,res) => {res.json({"message":"hi"})});
 app.use("/api/products",productRoute);
 app.use("/api/checkout",checkOut);
 
